@@ -56,7 +56,7 @@ class FeedFragment: BaseFragment() {
                     when (it) {
                         is FeedUiEffect.OpenMovieDetail -> {
                             navController.safeNavigate(
-                                "App://detail/${it.movieName}"
+                                "App://Detail/${it.movieName}"
                             )
                         }
 
