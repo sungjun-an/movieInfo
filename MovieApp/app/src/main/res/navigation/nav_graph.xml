@@ -9,54 +9,47 @@
         android:id="@+id/feed_fragment"
         android:name="com.example.movieapp.features.feed.FeedFragment"
         android:label="Feed" >
-        <action
-            android:id="@+id/action_feed_to_detail"
-            app:destination="@id/detail_fragment"
-            app:launchSingleTop="true" />
 
-        <action
-            android:id="@+id/action_feed_to_info"
-            app:destination="@id/infoDialogFragment"
-            app:launchSingleTop="true" />
+        <deepLink app:uri="APP://Feed" />
     </fragment>
 
     <fragment
         android:id="@+id/detail_fragment"
         android:name="com.example.movieapp.features.detail.DetailFragment"
-        android:label="detail" >
+        android:label="Detail" >
         <argument
             android:name="movieName"
             app:argType="string" />
-        <action
-            android:id="@+id/action_detail_to_rating"
-            app:destination="@id/ratingDialogFragment"
-            app:launchSingleTop="true" />
-        <action
-            android:id="@+id/action_detail_to_imdb_dialog"
-            app:destination="@id/IMDBDialogFragment"
-            app:launchSingleTop="true" />
+
+        <deepLink app:uri="App://Detail/{movieName}" />
     </fragment>
     <dialog
         android:id="@+id/infoDialogFragment"
-        android:name="com.example.movieapp.features.dialog.InfoDialogFragment"
-        android:label="InfoDialogFragment" />
+        android:name="com.example.movieapp.features.feed.dialog.InfoDialogFragment"
+        android:label="Info" >
+        <deepLink app:uri="App://Info" />
+    </dialog>
     <dialog
         android:id="@+id/IMDBDialogFragment"
-        android:name="com.example.movieapp.features.dialog.IMDBDialogFragment"
-        android:label="IMDBDialogFragment" >
+        android:name="com.example.movieapp.features.detail.dialog.IMDBDialogFragment"
+        android:label="IMDB" >
         <argument
             android:name="url"
             app:argType="string" />
+
+        <deepLink app:uri="App://IMDB/{url}" />
     </dialog>
     <dialog
         android:id="@+id/ratingDialogFragment"
-        android:name="com.example.movieapp.features.dialog.RatingDialogFragment"
-        android:label="RatingDialogFragment" >
+        android:name="com.example.movieapp.features.detail.dialog.RatingDialogFragment"
+        android:label="Rating" >
         <argument
             android:name="movieName"
             app:argType="string" />
         <argument
             android:name="rating"
             app:argType="float" />
+
+        <deepLink app:uri="APP://Rating/{movieName}/{rating}" />
     </dialog>
 </navigation>

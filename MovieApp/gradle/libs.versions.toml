@@ -12,11 +12,12 @@ coil = "3.0.4"
 safeArgs = "2.8.5"
 navVersion = "2.8.5"
 hilt = "2.51.1"
-kapt = "1.9.0"
 timber = "5.0.1"
 retrofit = "2.11.0"
 okhttp = "5.0.0-alpha.2"
 gson = "2.11.0"
+appcompat = "1.7.0"
+material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +48,8 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [bundles]
 navigation = ["navigation-fragment", "navigation-ui", "navigation-dynamic-features-fragment"]
@@ -58,5 +61,5 @@ coil = ["coil-compose", "coil-network"]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 navigation-safe-args-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeArgs" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kapt" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
